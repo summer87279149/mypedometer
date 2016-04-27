@@ -20,4 +20,5 @@
 @property (nonatomic,strong)NSString *calorie;
 @property (nonatomic,strong)NSString *totalKm;
 //-(instancetype)initWithStepCounts:(NSString *)stepCounts andDailyGoal:(NSString *)dailyGoal andDailyGoalProgress:(NSString*)dailyGoalProgress andProgress:(float )progress andCalorie:(NSString*)calorie andTotalKm:(NSString *)totalKm;
+
 @end

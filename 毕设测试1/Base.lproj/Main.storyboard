@@ -197,23 +197,23 @@
                     </tabBar>
                     <connections>
                         <segue destination="yXr-KD-WeM" kind="relationship" relationship="viewControllers" id="73d-1g-xVl"/>
-                        <segue destination="VOY-Nx-gzy" kind="relationship" relationship="viewControllers" id="Mn1-eF-a8g"/>
                         <segue destination="1q2-dh-4VF" kind="relationship" relationship="viewControllers" id="CW1-3V-Uyy"/>
+                        <segue destination="VOY-Nx-gzy" kind="relationship" relationship="viewControllers" id="DOM-e9-9N0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sC8-zp-G7B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-812.5" y="-1659.5"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Real Time Pedometer View Controller-->
         <scene sceneID="3oi-ad-Hat">
             <objects>
-                <viewController id="VOY-Nx-gzy" customClass="second_ViewController" sceneMemberID="viewController">
+                <viewController id="VOY-Nx-gzy" customClass="RealTimePedometerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cle-OI-l8O"/>
                         <viewControllerLayoutGuide type="bottom" id="BSW-Ik-Kfm"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="f3n-TW-pTq">
+                    <view key="view" contentMode="scaleToFill" id="f3n-TW-pTq" customClass="rea">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -227,9 +227,6 @@
                                     <constraint firstAttribute="width" constant="104" id="V0h-xV-PWT"/>
                                 </constraints>
                                 <state key="normal" image="GO5"/>
-                                <connections>
-                                    <action selector="RunOrStop:" destination="VOY-Nx-gzy" eventType="touchUpInside" id="cVG-HG-YRC"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0d5-b1-hKl">
                                 <rect key="frame" x="228" y="431" width="101" height="101"/>
@@ -238,9 +235,6 @@
                                     <constraint firstAttribute="height" constant="101" id="tnY-td-zdj"/>
                                 </constraints>
                                 <state key="normal" image="STOP-1"/>
-                                <connections>
-                                    <action selector="getStopDate:" destination="VOY-Nx-gzy" eventType="touchUpInside" id="FkR-td-JN8"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFh-u0-Nsd">
                                 <rect key="frame" x="94" y="175" width="150" height="79"/>
@@ -269,11 +263,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="recents" id="CFS-Iu-jxc"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="btn" destination="TVK-GG-z2e" id="y0y-GZ-1ak"/>
-                        <outlet property="distanceLabel" destination="lFh-u0-Nsd" id="Uy2-1c-YbS"/>
-                        <outlet property="stopbtn" destination="0d5-b1-hKl" id="zwY-LZ-jNn"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wmX-Pi-IWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

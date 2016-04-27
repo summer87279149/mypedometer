@@ -26,6 +26,7 @@
 		3BF1DC831CC74E1E00C084AF /* setController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1DC821CC74E1E00C084AF /* setController.m */; };
 		3BF1DC861CC74E7500C084AF /* setTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1DC851CC74E7500C084AF /* setTableViewController.m */; };
 		3BF57A6C1CB9073E00C20458 /* first_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF57A6B1CB9073E00C20458 /* first_ViewController.m */; };
+		C4FC02371CD0DC4D00D7D577 /* RealTimePedometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FC02361CD0DC4D00D7D577 /* RealTimePedometerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,8 @@
 		3BF57A6A1CB9073E00C20458 /* first_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = first_ViewController.h; sourceTree = "<group>"; };
 		3BF57A6B1CB9073E00C20458 /* first_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = first_ViewController.m; sourceTree = "<group>"; };
 		C4BCCA4D1CCFA91C0059725F /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		C4FC02351CD0DC4D00D7D577 /* RealTimePedometerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RealTimePedometerViewController.h; path = ../RealTimePedometerViewController.h; sourceTree = "<group>"; };
+		C4FC02361CD0DC4D00D7D577 /* RealTimePedometerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RealTimePedometerViewController.m; path = ../RealTimePedometerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +209,8 @@
 			children = (
 				3B4CDE6A1CBA437700B0E0C6 /* second_ViewController.h */,
 				3B4CDE6B1CBA437700B0E0C6 /* second_ViewController.m */,
+				C4FC02351CD0DC4D00D7D577 /* RealTimePedometerViewController.h */,
+				C4FC02361CD0DC4D00D7D577 /* RealTimePedometerViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 				3BF1DC7F1CC74D0700C084AF /* TableViewCell.m in Sources */,
 				3B1D88761CB3D3E9001D44B9 /* AppDelegate.m in Sources */,
 				3BF1DC861CC74E7500C084AF /* setTableViewController.m in Sources */,
+				C4FC02371CD0DC4D00D7D577 /* RealTimePedometerViewController.m in Sources */,
 				3B5681A01CCA42C3007C081F /* aboutViewController.m in Sources */,
 				3B5681971CCA3911007C081F /* persenSetVC.m in Sources */,
 				3BF1DC7A1CC7488500C084AF /* setGoalController.m in Sources */,
