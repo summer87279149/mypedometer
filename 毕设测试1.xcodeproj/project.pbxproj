@@ -65,9 +65,6 @@
 		3BF1DC851CC74E7500C084AF /* setTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = setTableViewController.m; sourceTree = "<group>"; };
 		3BF57A6A1CB9073E00C20458 /* first_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = first_ViewController.h; sourceTree = "<group>"; };
 		3BF57A6B1CB9073E00C20458 /* first_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = first_ViewController.m; sourceTree = "<group>"; };
-		C4BA11261CD4961900EA7F6F /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Base.framework; path = ../BaiduMap_IOSSDK_v2.10.2_Lib/BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
-		C4BA11271CD4961900EA7F6F /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Location.framework; path = ../BaiduMap_IOSSDK_v2.10.2_Lib/BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
-		C4BA11281CD4961900EA7F6F /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Map.framework; path = ../BaiduMap_IOSSDK_v2.10.2_Lib/BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
 		C4BCCA4D1CCFA91C0059725F /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		C4FC02351CD0DC4D00D7D577 /* RealTimePedometerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RealTimePedometerViewController.h; path = ../RealTimePedometerViewController.h; sourceTree = "<group>"; };
 		C4FC02361CD0DC4D00D7D577 /* RealTimePedometerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RealTimePedometerViewController.m; path = ../RealTimePedometerViewController.m; sourceTree = "<group>"; };
@@ -88,9 +85,6 @@
 		3B1D88651CB3D3E9001D44B9 = {
 			isa = PBXGroup;
 			children = (
-				C4BA11261CD4961900EA7F6F /* BaiduMapAPI_Base.framework */,
-				C4BA11271CD4961900EA7F6F /* BaiduMapAPI_Location.framework */,
-				C4BA11281CD4961900EA7F6F /* BaiduMapAPI_Map.framework */,
 				3B3418121CCDC65500BA0475 /* Assets.xcassets */,
 				C4BCCA4D1CCFA91C0059725F /* Reveal.framework */,
 				3B1D88881CB3D426001D44B9 /* HealthKit.framework */,
