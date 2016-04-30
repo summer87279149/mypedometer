@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "按钮.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "new_friend_icon@2x.png",
       "scale" : "2x"
     },
     {

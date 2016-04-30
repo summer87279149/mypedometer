@@ -121,7 +121,7 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
             // switch to main queue if we're going to do anything with UIKit
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (strongSelf) {
-                    self.resultsLabel.text = @"There was an error.";
+                    self.resultsLabel.text = @"error!!!";
                 }
             });
         } else {
@@ -149,7 +149,9 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
     [self.stepCountLog removeAllObjects];
     //self.showLogsButton.enabled = NO;
     
-    self.resultsLabel.text = @"------";
+    self.resultsLabel.text = @"- - - -";
+    self.distanceLabel.text = @"- - - -";
+    self.floorCountLabel.text = @"- - - -";
 }
 
 
@@ -159,14 +161,14 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
 - (void)handlePedometerData:(CMPedometerData *)pmData {
     
     // Log it
-    NSLog(@"Data Received: %@", pmData);
+   // NSLog(@"Data Received: %@", pmData);
     //timestampString：CMPedometerData的结束时间
-    NSString *timestampString = [self.timestampFormatter stringFromDate:pmData.endDate];
-    //CMPedometerData的显示步数格式
-    NSString *logString = [NSString stringWithFormat:@"%@ - %@ steps",
-                           timestampString, pmData.numberOfSteps];
-    [self.stepCountLog addObject:logString];
+   // NSString *timestampString = [self.timestampFormatter stringFromDate:pmData.endDate];
     
+//    NSString *logString = [NSString stringWithFormat:@"%@ - %@ steps",
+//                           timestampString, pmData.numberOfSteps];
+//    [self.stepCountLog addObject:logString];
+//    
     
     // Display it
     NSString *floorString;
@@ -175,15 +177,17 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
         floorString = [NSString stringWithFormat:@"Floors: %@ up, %@ down",
                        pmData.floorsAscended, pmData.floorsDescended];
     } else {
-        floorString = @"(Floor counts not available on this device.)";
+        floorString = @"楼层数不能获取";
     }
     //prepare for voice
     int numer=[pmData.numberOfSteps intValue];
     //最终的显示格式 ： 步数 ／距离（米）／楼层／记录次数
-    self.resultsLabel.text = [NSString stringWithFormat:@"%@ steps\n%1.2f meters\n%@\n\n(Update #%ld)",
-                              pmData.numberOfSteps, [pmData.distance doubleValue],
-                              floorString, self.stepCountLog.count];
-    
+//    self.resultsLabel.text = [NSString stringWithFormat:@"%@ steps\n%1.2f meters\n%@\n\n(Update #%ld)",
+//                              pmData.numberOfSteps, [pmData.distance doubleValue],
+//                              floorString, self.stepCountLog.count];
+    self.resultsLabel.text=[NSString stringWithFormat:@"%@",pmData.numberOfSteps];
+    self.distanceLabel.text=[NSString stringWithFormat:@"%.2f",[pmData.distance doubleValue]];
+    self.floorCountLabel.text=[NSString stringWithFormat:@"%@",floorString];
     
     
     
