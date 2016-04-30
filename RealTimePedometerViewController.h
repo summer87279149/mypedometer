@@ -2,7 +2,7 @@
 //  RealTimePedometerViewController.h
 //  CoreMotionDemos
 //
-//  Created by Matt Blair on 2/24/15.
+//
 //  Copyright (c) 2015 Elsewise LLC. All rights reserved.
 //
 
@@ -10,10 +10,13 @@
 
 @interface RealTimePedometerViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UISegmentedControl *startSegmentedControl;
 @property (weak, nonatomic) IBOutlet UILabel *resultsLabel;
-@property (weak, nonatomic) IBOutlet UIButton *showLogsButton;
+@property (weak, nonatomic) IBOutlet UIButton *runBtn;
 
-//- (IBAction)handleStartTimeSelected:(UISegmentedControl *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *stopBtn;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *floorCountLabel;
+
+
 
 @end

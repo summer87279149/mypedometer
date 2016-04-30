@@ -217,43 +217,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="壁纸-1" translatesAutoresizingMaskIntoConstraints="NO" id="SbQ-Qa-bQr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="第二页" translatesAutoresizingMaskIntoConstraints="NO" id="SbQ-Qa-bQr">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVK-GG-z2e">
-                                <rect key="frame" x="40" y="428" width="104" height="104"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="104" id="GYt-dZ-BqG"/>
-                                    <constraint firstAttribute="width" constant="104" id="V0h-xV-PWT"/>
-                                </constraints>
-                                <state key="normal" image="GO5"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0d5-b1-hKl">
-                                <rect key="frame" x="228" y="431" width="101" height="101"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="101" id="8ig-Yk-UWS"/>
-                                    <constraint firstAttribute="height" constant="101" id="tnY-td-zdj"/>
-                                </constraints>
-                                <state key="normal" image="STOP-1"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFh-u0-Nsd">
-                                <rect key="frame" x="94" y="175" width="150" height="79"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- - - -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPd-07-qjv">
+                                <rect key="frame" x="29" y="155" width="326" height="123"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="60"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- - - -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBf-Aq-1lk">
+                                <rect key="frame" x="37" y="374" width="106" height="45"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="屏幕快照 2016-04-30 12.16.35" translatesAutoresizingMaskIntoConstraints="NO" id="4n6-jL-nbL">
+                                <rect key="frame" x="65" y="329" width="50" height="50"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="屏幕快照 2016-04-30 12.15.40" translatesAutoresizingMaskIntoConstraints="NO" id="UGt-WM-e8u">
+                                <rect key="frame" x="268" y="335" width="38" height="38"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vms-7G-K8h">
+                                <rect key="frame" x="132" y="504" width="100" height="100"/>
+                                <state key="normal" title="开始" backgroundImage="按钮"/>
+                                <connections>
+                                    <action selector="ClickRunBtn:" destination="VOY-Nx-gzy" eventType="touchUpInside" id="AsU-uo-yxn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiw-jk-mEC">
+                                <rect key="frame" x="132" y="504" width="100" height="100"/>
+                                <state key="normal" title="停止" backgroundImage="按钮"/>
+                                <connections>
+                                    <action selector="ClickStopBtn:" destination="VOY-Nx-gzy" eventType="touchUpInside" id="36s-3O-wcw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- - - -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LC-DL-z73">
+                                <rect key="frame" x="237" y="380" width="101" height="33"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="SbQ-Qa-bQr" secondAttribute="trailing" id="6kt-QF-UTj"/>
-                            <constraint firstItem="TVK-GG-z2e" firstAttribute="leading" secondItem="f3n-TW-pTq" secondAttribute="leading" constant="40" id="Dmb-CL-xhV"/>
                             <constraint firstItem="SbQ-Qa-bQr" firstAttribute="leading" secondItem="f3n-TW-pTq" secondAttribute="leading" id="Hku-YH-und"/>
                             <constraint firstItem="SbQ-Qa-bQr" firstAttribute="top" secondItem="Cle-OI-l8O" secondAttribute="bottom" id="Sgb-0d-Glp"/>
-                            <constraint firstItem="BSW-Ik-Kfm" firstAttribute="top" secondItem="0d5-b1-hKl" secondAttribute="bottom" constant="86" id="YhI-cI-MLC"/>
                             <constraint firstItem="SbQ-Qa-bQr" firstAttribute="top" secondItem="Cle-OI-l8O" secondAttribute="bottom" constant="-20" id="avu-O3-diy"/>
-                            <constraint firstAttribute="trailing" secondItem="0d5-b1-hKl" secondAttribute="trailing" constant="46" id="hFR-cv-YUZ"/>
                             <constraint firstItem="BSW-Ik-Kfm" firstAttribute="top" secondItem="SbQ-Qa-bQr" secondAttribute="bottom" id="hQw-6m-Brc"/>
-                            <constraint firstItem="BSW-Ik-Kfm" firstAttribute="top" secondItem="TVK-GG-z2e" secondAttribute="bottom" constant="86" id="ipu-Rf-TkO"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -263,6 +274,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="recents" id="CFS-Iu-jxc"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="distanceLabel" destination="YBf-Aq-1lk" id="JtH-w0-nuo"/>
+                        <outlet property="floorCountLabel" destination="5LC-DL-z73" id="FmQ-Si-qRo"/>
+                        <outlet property="resultsLabel" destination="IPd-07-qjv" id="EHu-5a-W4k"/>
+                        <outlet property="runBtn" destination="Vms-7G-K8h" id="H3f-md-q4d"/>
+                        <outlet property="stopBtn" destination="fiw-jk-mEC" id="qTB-eC-Efh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wmX-Pi-IWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -662,12 +680,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="GO5" width="170" height="170"/>
         <image name="IMG_2698副本副本-2" width="750" height="1334"/>
-        <image name="STOP-1" width="170" height="170"/>
         <image name="xiaohui" width="368" height="368"/>
         <image name="壁纸" width="640" height="1136"/>
-        <image name="壁纸-1" width="640" height="1136"/>
+        <image name="屏幕快照 2016-04-30 12.15.40" width="196" height="196"/>
+        <image name="屏幕快照 2016-04-30 12.16.35" width="92" height="89"/>
+        <image name="按钮" width="100" height="100"/>
+        <image name="第二页" width="750" height="1334"/>
         <image name="足迹" width="375" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
