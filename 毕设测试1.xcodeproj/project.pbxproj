@@ -26,9 +26,6 @@
 		3BF1DC831CC74E1E00C084AF /* setController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1DC821CC74E1E00C084AF /* setController.m */; };
 		3BF1DC861CC74E7500C084AF /* setTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1DC851CC74E7500C084AF /* setTableViewController.m */; };
 		3BF57A6C1CB9073E00C20458 /* first_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF57A6B1CB9073E00C20458 /* first_ViewController.m */; };
-		C4BA11291CD4961900EA7F6F /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BA11261CD4961900EA7F6F /* BaiduMapAPI_Base.framework */; };
-		C4BA112A1CD4961900EA7F6F /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BA11271CD4961900EA7F6F /* BaiduMapAPI_Location.framework */; };
-		C4BA112B1CD4961900EA7F6F /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BA11281CD4961900EA7F6F /* BaiduMapAPI_Map.framework */; };
 		C4FC02371CD0DC4D00D7D577 /* RealTimePedometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FC02361CD0DC4D00D7D577 /* RealTimePedometerViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -81,9 +78,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4BA11291CD4961900EA7F6F /* BaiduMapAPI_Base.framework in Frameworks */,
-				C4BA112A1CD4961900EA7F6F /* BaiduMapAPI_Location.framework in Frameworks */,
-				C4BA112B1CD4961900EA7F6F /* BaiduMapAPI_Map.framework in Frameworks */,
 				3B1D88891CB3D426001D44B9 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
