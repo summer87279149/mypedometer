@@ -11,7 +11,7 @@
 @import AVFoundation;
 
 #import "RealTimePedometerViewController.h"
-
+#import "MZTimerLabel.h"
 typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
     CMDRealTimeStartFromNow = 0,
     CMDRealTimeStartFromSixHoursAgo,
@@ -35,7 +35,8 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
 
 //语音播报器
 @property (strong, nonatomic) AVSpeechSynthesizer *announcer;
-
+@property (strong,nonatomic) MZTimerLabel *timer;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @end
 
 
@@ -58,7 +59,7 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
     //一个数组，存放步数数据
     // capacity could be bigger for long-running tests
     self.stepCountLog = [[NSMutableArray alloc] initWithCapacity:40];
-    
+    self.timer=[[MZTimerLabel alloc]initWithLabel:self.timerLabel];
     //设置时间格式、日期格式、时区
    
     self.timestampFormatter = [[NSDateFormatter alloc] init];
@@ -80,6 +81,8 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
     self.resultsLabel.text = @"loading...";
     self.distanceLabel.text = @"loading...";
     self.floorCountLabel.text = @"loading...";
+    [self.timer reset];
+    [self.timer start];
     [self startQueryingPedometer];
     
     
@@ -89,6 +92,7 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
 - (IBAction)ClickStopBtn:(UIButton *)sender {
     self.stopBtn.hidden=YES;
     self.runBtn.hidden=NO;
+    [self.timer pause];
     [self stopQueryingPedometer];
 }
 

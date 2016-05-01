@@ -17,7 +17,6 @@
 		3B3418131CCDC65500BA0475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3418121CCDC65500BA0475 /* Assets.xcassets */; };
 		3B3418161CCDDE3100BA0475 /* personModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3418151CCDDE3100BA0475 /* personModal.m */; };
 		3B4CDE401CB9FD8E00B0E0C6 /* displayDataModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4CDE3F1CB9FD8E00B0E0C6 /* displayDataModal.m */; };
-		3B4CDE6C1CBA437700B0E0C6 /* second_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4CDE6B1CBA437700B0E0C6 /* second_ViewController.m */; };
 		3B5681971CCA3911007C081F /* persenSetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5681961CCA3911007C081F /* persenSetVC.m */; };
 		3B5681A01CCA42C3007C081F /* aboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B56819F1CCA42C3007C081F /* aboutViewController.m */; };
 		3BF1DC7A1CC7488500C084AF /* setGoalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1DC781CC7488500C084AF /* setGoalController.m */; };
@@ -26,6 +25,7 @@
 		3BF1DC831CC74E1E00C084AF /* setController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1DC821CC74E1E00C084AF /* setController.m */; };
 		3BF1DC861CC74E7500C084AF /* setTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1DC851CC74E7500C084AF /* setTableViewController.m */; };
 		3BF57A6C1CB9073E00C20458 /* first_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF57A6B1CB9073E00C20458 /* first_ViewController.m */; };
+		C42288781CD637BC00725B80 /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C42288761CD637BC00725B80 /* MZTimerLabel.m */; };
 		C4FC02371CD0DC4D00D7D577 /* RealTimePedometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FC02361CD0DC4D00D7D577 /* RealTimePedometerViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -48,8 +48,6 @@
 		3B3418151CCDDE3100BA0475 /* personModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = personModal.m; sourceTree = "<group>"; };
 		3B4CDE3E1CB9FD8E00B0E0C6 /* displayDataModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = displayDataModal.h; sourceTree = "<group>"; };
 		3B4CDE3F1CB9FD8E00B0E0C6 /* displayDataModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = displayDataModal.m; sourceTree = "<group>"; };
-		3B4CDE6A1CBA437700B0E0C6 /* second_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = second_ViewController.h; path = ../second_ViewController.h; sourceTree = "<group>"; };
-		3B4CDE6B1CBA437700B0E0C6 /* second_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = second_ViewController.m; path = ../second_ViewController.m; sourceTree = "<group>"; };
 		3B5681951CCA3911007C081F /* persenSetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = persenSetVC.h; sourceTree = "<group>"; };
 		3B5681961CCA3911007C081F /* persenSetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = persenSetVC.m; sourceTree = "<group>"; };
 		3B56819E1CCA42C3007C081F /* aboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aboutViewController.h; sourceTree = "<group>"; };
@@ -65,9 +63,8 @@
 		3BF1DC851CC74E7500C084AF /* setTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = setTableViewController.m; sourceTree = "<group>"; };
 		3BF57A6A1CB9073E00C20458 /* first_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = first_ViewController.h; sourceTree = "<group>"; };
 		3BF57A6B1CB9073E00C20458 /* first_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = first_ViewController.m; sourceTree = "<group>"; };
-		C4BA11261CD4961900EA7F6F /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Base.framework; path = ../BaiduMap_IOSSDK_v2.10.2_Lib/BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
-		C4BA11271CD4961900EA7F6F /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Location.framework; path = ../BaiduMap_IOSSDK_v2.10.2_Lib/BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
-		C4BA11281CD4961900EA7F6F /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Map.framework; path = ../BaiduMap_IOSSDK_v2.10.2_Lib/BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
+		C42288761CD637BC00725B80 /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
+		C42288771CD637BC00725B80 /* MZTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
 		C4BCCA4D1CCFA91C0059725F /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		C4FC02351CD0DC4D00D7D577 /* RealTimePedometerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RealTimePedometerViewController.h; path = ../RealTimePedometerViewController.h; sourceTree = "<group>"; };
 		C4FC02361CD0DC4D00D7D577 /* RealTimePedometerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RealTimePedometerViewController.m; path = ../RealTimePedometerViewController.m; sourceTree = "<group>"; };
@@ -88,9 +85,6 @@
 		3B1D88651CB3D3E9001D44B9 = {
 			isa = PBXGroup;
 			children = (
-				C4BA11261CD4961900EA7F6F /* BaiduMapAPI_Base.framework */,
-				C4BA11271CD4961900EA7F6F /* BaiduMapAPI_Location.framework */,
-				C4BA11281CD4961900EA7F6F /* BaiduMapAPI_Map.framework */,
 				3B3418121CCDC65500BA0475 /* Assets.xcassets */,
 				C4BCCA4D1CCFA91C0059725F /* Reveal.framework */,
 				3B1D88881CB3D426001D44B9 /* HealthKit.framework */,
@@ -126,6 +120,8 @@
 		3B1D88711CB3D3E9001D44B9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C42288761CD637BC00725B80 /* MZTimerLabel.m */,
+				C42288771CD637BC00725B80 /* MZTimerLabel.h */,
 				3B1D88721CB3D3E9001D44B9 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -213,8 +209,6 @@
 		3BF2F5E91CC08566007F1773 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3B4CDE6A1CBA437700B0E0C6 /* second_ViewController.h */,
-				3B4CDE6B1CBA437700B0E0C6 /* second_ViewController.m */,
 				C4FC02351CD0DC4D00D7D577 /* RealTimePedometerViewController.h */,
 				C4FC02361CD0DC4D00D7D577 /* RealTimePedometerViewController.m */,
 			);
@@ -329,7 +323,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B4CDE6C1CBA437700B0E0C6 /* second_ViewController.m in Sources */,
 				3B1D88791CB3D3E9001D44B9 /* ViewController.m in Sources */,
 				3B2FA2421CC5D6460042F2B9 /* zujicontroller.m in Sources */,
 				3BF1DC831CC74E1E00C084AF /* setController.m in Sources */,
@@ -340,6 +333,7 @@
 				3B5681A01CCA42C3007C081F /* aboutViewController.m in Sources */,
 				3B5681971CCA3911007C081F /* persenSetVC.m in Sources */,
 				3BF1DC7A1CC7488500C084AF /* setGoalController.m in Sources */,
+				C42288781CD637BC00725B80 /* MZTimerLabel.m in Sources */,
 				3B3418161CCDDE3100BA0475 /* personModal.m in Sources */,
 				3B4CDE401CB9FD8E00B0E0C6 /* displayDataModal.m in Sources */,
 				3B1D88731CB3D3E9001D44B9 /* main.m in Sources */,
