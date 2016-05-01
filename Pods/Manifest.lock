@@ -1,0 +1,10 @@
+PODS:
+  - BaiduMapKit (2.10.2)
+
+DEPENDENCIES:
+  - BaiduMapKit
+
+SPEC CHECKSUMS:
+  BaiduMapKit: b1706a062597c70ec62a0cca93212cba1d3017e1
+
+COCOAPODS: 0.39.0
