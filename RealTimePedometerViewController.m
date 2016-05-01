@@ -37,6 +37,9 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
 @property (strong, nonatomic) AVSpeechSynthesizer *announcer;
 @property (strong,nonatomic) MZTimerLabel *timer;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dengdaishuju;
+
+
 @end
 
 
@@ -81,6 +84,7 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
     self.resultsLabel.text = @"loading...";
     self.distanceLabel.text = @"loading...";
     self.floorCountLabel.text = @"loading...";
+    self.dengdaishuju.text = @"获取数据中,请保持走动";
     [self.timer reset];
     [self.timer start];
     [self startQueryingPedometer];
@@ -90,6 +94,7 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
     
 }
 - (IBAction)ClickStopBtn:(UIButton *)sender {
+    self.dengdaishuju.text=@"";
     self.stopBtn.hidden=YES;
     self.runBtn.hidden=NO;
     [self.timer pause];
@@ -178,10 +183,10 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
     NSString *floorString;
     //如果floor counts能够获取，就保存在floorString中
     if ([CMPedometer isFloorCountingAvailable]) {
-        floorString = [NSString stringWithFormat:@"Floors: %@ up, %@ down",
+        floorString = [NSString stringWithFormat:@"%@ , %@ ",
                        pmData.floorsAscended, pmData.floorsDescended];
     } else {
-        floorString = @"楼层数不能获取";
+        floorString = @"error";
     }
     //prepare for voice
     int numer=[pmData.numberOfSteps intValue];
@@ -196,11 +201,11 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
     
     
     // 语音播放
-    if(numer%20==0){
-    NSString *countString =[NSString stringWithFormat:@"%@ steps", pmData.numberOfSteps];
+    if(numer%10==0){
+    NSString *countString =[NSString stringWithFormat:@"%@步", pmData.numberOfSteps];
     AVSpeechUtterance *countUtterance = [[AVSpeechUtterance alloc] initWithString:countString];
     countUtterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"zh-CN"];
-    countUtterance.rate = 0.3;
+    countUtterance.rate = 0.5;
     
     [self.announcer speakUtterance:countUtterance];
     }
