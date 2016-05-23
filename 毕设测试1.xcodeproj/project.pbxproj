@@ -457,7 +457,7 @@
 				INFOPLIST_FILE = "毕设测试1/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.shangqian.----1";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.shangqian.----2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -474,7 +474,7 @@
 				INFOPLIST_FILE = "毕设测试1/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.shangqian.----1";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.shangqian.----2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
