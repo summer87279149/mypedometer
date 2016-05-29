@@ -45,9 +45,14 @@
     [self.health requestAuthorizationToShareTypes:nil readTypes:set2 completion:^(BOOL success, NSError * _Nullable error) {
         [self readDistanceData];
     }];
-
     
 }
+-(void)viewWillAppear:(BOOL)animated{
+    
+}
+
+
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqual:@"segue"]){

@@ -380,6 +380,21 @@
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="获取当地天气信息中...." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFL-45-7Pq">
+                                <rect key="frame" x="13" y="73" width="342" height="21"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="定位中。。。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCQ-pk-agR">
+                                <rect key="frame" x="166" y="22" width="88" height="40"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="定位图标" translatesAutoresizingMaskIntoConstraints="NO" id="EPE-7M-K2D">
+                                <rect key="frame" x="134" y="23" width="32" height="32"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -437,6 +452,7 @@
                     <tabBarItem key="tabBarItem" title="计步" image="tab_icon_quiz_normal" id="CFS-Iu-jxc"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="AddressLabel" destination="GCQ-pk-agR" id="he9-4x-phE"/>
                         <outlet property="dengdaishuju" destination="dxP-Y1-7tl" id="Crw-Wx-YVO"/>
                         <outlet property="distanceLabel" destination="YBf-Aq-1lk" id="JtH-w0-nuo"/>
                         <outlet property="floorCountLabel" destination="5LC-DL-z73" id="FmQ-Si-qRo"/>
@@ -444,11 +460,12 @@
                         <outlet property="runBtn" destination="Vms-7G-K8h" id="H3f-md-q4d"/>
                         <outlet property="stopBtn" destination="fiw-jk-mEC" id="qTB-eC-Efh"/>
                         <outlet property="timerLabel" destination="R86-fk-kXC" id="hM8-FW-dkM"/>
+                        <outlet property="weatherLabel" destination="cFL-45-7Pq" id="KOr-nD-htz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wmX-Pi-IWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1052.5" y="-818.5"/>
+            <point key="canvasLocation" x="-1053.5" y="-818.5"/>
         </scene>
         <!--设置-->
         <scene sceneID="pS0-Cz-niZ">
@@ -853,6 +870,7 @@
         <image name="time-1" width="50" height="50"/>
         <image name="xiaohui" width="368" height="368"/>
         <image name="壁纸" width="640" height="1136"/>
+        <image name="定位图标" width="40" height="45"/>
         <image name="屏幕快照 2016-04-30 12.15.40" width="196" height="196"/>
         <image name="按钮" width="100" height="100"/>
         <image name="火2" width="30" height="30"/>

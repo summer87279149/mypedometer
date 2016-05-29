@@ -12,6 +12,8 @@
 
 #import "RealTimePedometerViewController.h"
 #import "MZTimerLabel.h"
+#import <CoreLocation/CoreLocation.h>
+
 typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
     CMDRealTimeStartFromNow = 0,
     CMDRealTimeStartFromSixHoursAgo,
@@ -19,7 +21,7 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
 };
 
 
-@interface RealTimePedometerViewController ()
+@interface RealTimePedometerViewController ()<AVAudioPlayerDelegate,CLLocationManagerDelegate>
 
 //CMPedometer 对象
 @property (strong, nonatomic) CMPedometer *pedometer;
@@ -38,6 +40,13 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
 @property (strong,nonatomic) MZTimerLabel *timer;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dengdaishuju;
+//音频
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+//定位
+@property(nonatomic,strong)CLLocationManager *locationManager;
+
+@property (weak, nonatomic) IBOutlet UILabel *weatherLabel;
+@property (weak, nonatomic) IBOutlet UILabel *AddressLabel;
 
 
 @end
@@ -45,7 +54,39 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
 
 @implementation RealTimePedometerViewController
 
-
+- (AVAudioPlayer *)audioPlayer {
+    if (_audioPlayer == nil) {
+        // 构造待播放音乐文件URL
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"faded.mp3" ofType:nil];
+        NSURL *fileUrl = [NSURL fileURLWithPath:filePath];
+        
+        // 1.初始化播放器
+        // 注意这里的Url参数只能时文件路径，不支持HTTP Url
+        NSError *error;
+        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileUrl error:&error];
+        if (error) {
+            NSLog(@"初始化播放器过程发生错误,错误信息:%@",error.localizedDescription);
+            return nil;
+        }
+        
+        // 2.设置播放器属性
+        _audioPlayer.numberOfLoops = -1;     // 设置0不循环
+        _audioPlayer.delegate = self;
+        
+        // 设置后台播放模式
+        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+        [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
+        [audioSession setActive:YES error:nil];
+        
+        // 3.加载音频文件到缓存
+        [_audioPlayer prepareToPlay];
+        
+        
+        
+    }
+    
+    return _audioPlayer;
+}
 #pragma mark - View Controller Lifecycle
 
 - (void)viewDidLoad {
@@ -64,7 +105,7 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
     self.stepCountLog = [[NSMutableArray alloc] initWithCapacity:40];
     self.timer=[[MZTimerLabel alloc]initWithLabel:self.timerLabel];
     //设置时间格式、日期格式、时区
-   
+
     self.timestampFormatter = [[NSDateFormatter alloc] init];
     self.timestampFormatter.locale = [NSLocale autoupdatingCurrentLocale];
     self.timestampFormatter.timeZone = [NSTimeZone localTimeZone];
@@ -72,6 +113,35 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
     self.timestampFormatter.timeStyle = NSDateFormatterMediumStyle;
     
     self.stopBtn.hidden=YES;
+    
+    //初始化定位信息
+    self.locationManager = [[CLLocationManager alloc] init];
+    // 判断是是否已打开定位服务
+    if (![CLLocationManager locationServicesEnabled]) {
+        NSLog(@"定位服务未打开，请打开定位服务");
+        return;
+    }
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+        // 未授权，则申请
+        NSLog(@"33333");
+        [self.locationManager requestWhenInUseAuthorization];
+    } else {
+        if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) {
+            // 配置CLLocationManager
+            NSLog(@"1111");
+            // 配置精度
+            self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+            // 配置位置更新的距离
+            self.locationManager.distanceFilter = 0.1;
+            // 配置代理
+            self.locationManager.delegate = self;
+            
+            // 开始定位
+            [self.locationManager startUpdatingLocation];
+            //            [self.locationManager startUpdatingHeading];
+        }
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,6 +149,8 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)ClickRunBtn:(UIButton *)sender {
+    
+    [self.audioPlayer play];
     self.runBtn.hidden = YES;
     self.stopBtn.hidden = NO;
     self.resultsLabel.text = @"loading...";
@@ -94,6 +166,7 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
     
 }
 - (IBAction)ClickStopBtn:(UIButton *)sender {
+    [self.audioPlayer stop];
     self.dengdaishuju.text=@"";
     self.stopBtn.hidden=YES;
     self.runBtn.hidden=NO;
@@ -211,8 +284,69 @@ typedef NS_ENUM(NSInteger, CMDRealTimeStartFrom) {
     }
 }
 
-
-
+#pragma mark 定位代理方法
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
+    // 获取当前所在的城市名
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    //根据经纬度反向地理编译出地址信息
+    [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *array, NSError *error){
+        if (array.count > 0){
+            CLPlacemark *placemark = [array objectAtIndex:0];
+            //将获得的所有信息显示到label上
+            NSLog(@"地标:%@",placemark.name);
+            //self.location.text = placemark.name;
+            //获取城市
+            NSString *city = placemark.locality;
+            if (!city) {
+                //四大直辖市的城市信息无法通过locality获得，只能通过获取省份的方法来获得（如果city为空，则可知为直辖市）
+                city = placemark.administrativeArea;
+            }
+            NSLog(@"city = %@", city);
+            [self QueryWeatherBy:city];
+            // _cityLable.text = city;
+            //[_cityButton setTitle:city forState:UIControlStateNormal];
+        }
+        else if (error == nil && [array count] == 0)
+        {
+            NSLog(@"No results were returned.");
+        }
+        else if (error != nil)
+        {
+            NSLog(@"An error occurred = %@", error);
+        }
+    }];
+    //系统会一直更新数据，直到选择停止更新，因为我们只需要获得一次经纬度即可，所以获取之后就停止更新
+    [manager stopUpdatingLocation];
+}
+-(void)QueryWeatherBy:(NSString *)city{
+    NSLog(@"进入 queryWeather");
+    NSString *str = [NSString stringWithFormat:@"http://v.juhe.cn/weather/index?format=2&cityname=%@&key=ad5d4ea2a99be7b3b2a7297a917ab9ad",city];
+    NSString *stringURL = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:stringURL];
+    NSLog(@"url:%@",url);
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSLog(@"request:%@",request);
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        //NSLog(@"天气字典里面:%@",data);
+        if(data){
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            NSLog(@"天气字典里面:%@",dict);
+            NSDictionary *result = dict[@"result"];
+            NSDictionary *d = result[@"today"];
+            NSString *weather = [d objectForKey:@"weather"];
+            NSString *tem = [d objectForKey:@"temperature"];
+            NSString *wind = [d objectForKey:@"wind"];
+            NSLog(@"weather :%@",weather);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.AddressLabel.text=city;
+                self.weatherLabel.text=[NSString stringWithFormat:@"实时天气:%@,温度:%@,%@",weather,tem,wind];
+            });
+            
+        }
+    }];
+    [task resume];
+}
 
 
 @end
